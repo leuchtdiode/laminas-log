@@ -9,14 +9,8 @@ use Monolog\Logger;
 
 class GlobalLogPlugin implements Plugin
 {
-	/**
-	 * @var array
-	 */
-	private $config;
+	private array $config;
 
-	/**
-	 * @param array $config
-	 */
 	public function __construct(array $config)
 	{
 		$this->config = $config;
@@ -25,7 +19,7 @@ class GlobalLogPlugin implements Plugin
 	/**
 	 * @throws Exception
 	 */
-	public function execute()
+	public function execute(): void
 	{
 		$logger = new Logger('application');
 

@@ -5,30 +5,18 @@ use Psr\Log\LoggerInterface;
 
 class Log
 {
-	/**
-	 * @var LoggerInterface
-	 */
-	private static $logger;
+	private static LoggerInterface $logger;
 
-	/**
-	 * @param LoggerInterface $logger
-	 */
 	public static function setLogger(LoggerInterface $logger)
 	{
 		self::$logger = $logger;
 	}
 
-	/**
-	 * @return LoggerInterface
-	 */
-	public static function getLogger()
+	public static function getLogger(): LoggerInterface
 	{
 		return self::$logger;
 	}
 
-	/**
-	 * @param string $text
-	 */
 	public static function debug($text)
 	{
 		self::$logger->debug(
@@ -36,9 +24,6 @@ class Log
 		);
 	}
 
-	/**
-	 * @param string $text
-	 */
 	public static function info($text)
 	{
 		self::$logger->info(
@@ -46,9 +31,6 @@ class Log
 		);
 	}
 
-	/**
-	 * @param string $text
-	 */
 	public static function warn($text)
 	{
 		self::$logger->warning(
@@ -56,9 +38,6 @@ class Log
 		);
 	}
 
-	/**
-	 * @param string $text
-	 */
 	public static function error($text)
 	{
 		self::$logger->error(
@@ -66,10 +45,6 @@ class Log
 		);
 	}
 
-	/**
-	 * @param $text
-	 * @return string
-	 */
 	private static function prepare($text)
 	{
 		if (is_array($text))

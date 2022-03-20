@@ -18,10 +18,10 @@
 		"Log"
 	],
 	"require": {
-		"php": ">=7.1",
+		"php": "^8.0",
 		"psr/log": "^1.0",
 		"monolog/monolog": "^2.0",
-		"leuchtdiode/laminas-common": "^1.0"
+		"leuchtdiode/laminas-common": "^2.1"
 	},
 	"autoload": {
 		"psr-4": {
