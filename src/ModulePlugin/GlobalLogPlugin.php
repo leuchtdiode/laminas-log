@@ -9,11 +9,10 @@ use Monolog\Logger;
 
 class GlobalLogPlugin implements Plugin
 {
-	private array $config;
-
-	public function __construct(array $config)
+	public function __construct(
+		private readonly array $config
+	)
 	{
-		$this->config = $config;
 	}
 
 	/**
