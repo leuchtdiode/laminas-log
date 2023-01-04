@@ -23,7 +23,7 @@ class Rotate extends Command
 		$this->setDescription('Rotates log files');
 	}
 
-	protected function execute(InputInterface $input, OutputInterface $output)
+	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
 		$rotates = $this->config['log']['rotate'] ?? [];
 
