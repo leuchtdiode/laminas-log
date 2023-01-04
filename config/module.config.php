@@ -1,6 +1,7 @@
 <?php
 namespace Log;
 
+use Log\Command\Rotate;
 use Psr\Log\LogLevel;
 
 return [
@@ -23,6 +24,12 @@ return [
 				'path'     => 'data/log/error.log',
 				'logLevel' => LogLevel::ERROR,
 			]
+		],
+	],
+
+	'console' => [
+		'commands' => [
+			Rotate::class
 		],
 	],
 ];
