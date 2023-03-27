@@ -12,20 +12,14 @@ class Module
 		return include __DIR__ . '/../config/module.config.php';
 	}
 
-	/**
-	 * @param MvcEvent $e
-	 */
-	public function onBootstrap(MvcEvent $e)
+	public function onBootstrap(MvcEvent $e): void
 	{
 		$eventManager 	= $e->getApplication()->getEventManager();
 		$serviceManager = $e->getApplication()->getServiceManager();
 
-		$eventManager->attach(MvcEvent::EVENT_ROUTE, function() use ($serviceManager)
-		{
-			PluginChain::create()
-				->addPlugin($serviceManager->get(GlobalLogPlugin::class))
-				->executeAll();
-		});
+		PluginChain::create()
+			->addPlugin($serviceManager->get(GlobalLogPlugin::class))
+			->executeAll();
 
 		$eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function(MvcEvent $e) use ($serviceManager)
 		{
