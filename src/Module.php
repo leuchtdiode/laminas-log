@@ -4,6 +4,7 @@ namespace Log;
 use Common\Module\PluginChain;
 use Log\ModulePlugin\GlobalLogPlugin;
 use Laminas\Mvc\MvcEvent;
+use Throwable;
 
 class Module
 {
@@ -12,6 +13,9 @@ class Module
 		return include __DIR__ . '/../config/module.config.php';
 	}
 
+	/**
+	 * @throws Throwable
+	 */
 	public function onBootstrap(MvcEvent $e): void
 	{
 		$eventManager 	= $e->getApplication()->getEventManager();

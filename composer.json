@@ -18,12 +18,12 @@
 		"Log"
 	],
 	"require": {
-		"php": "^8.1",
+		"php": "~8.1.0 || ~8.2.0",
 		"ext-zlib": "*",
 		"psr/log": "^1 || ^2 || ^3",
-		"monolog/monolog": "^3.0",
-		"leuchtdiode/laminas-common": "^2.4",
-		"leuchtdiode/laminas-console": "^0.2"
+		"monolog/monolog": "^3.3",
+		"leuchtdiode/laminas-common": "^2.6",
+		"leuchtdiode/laminas-console": "^0.3"
 	},
 	"autoload": {
 		"psr-4": {

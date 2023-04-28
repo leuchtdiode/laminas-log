@@ -18,7 +18,7 @@ class Rotate extends Command
 		parent::__construct('log:rotate');
 	}
 
-	protected function configure()
+	protected function configure(): void
 	{
 		$this->setDescription('Rotates log files');
 	}
